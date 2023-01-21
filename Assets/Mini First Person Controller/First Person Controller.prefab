@@ -65,7 +65,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3888a1e1c52793144a6d07b8c508772e, type: 3}
   - {fileID: 8300000, guid: 5b26cf3cd5f6b914a80e6d3476caaf86, type: 3}
   - {fileID: 8300000, guid: b16dc74b7376aca46bd0c6be96c940fa, type: 3}
-  crouch: {fileID: 114762042097486276}
+  crouch: {fileID: 0}
   crouchStartAudio: {fileID: 2065189708}
   crouchedAudio: {fileID: 3262163692650602188}
   crouchEndAudio: {fileID: 7563556069531604368}
@@ -390,7 +390,6 @@ GameObject:
   - component: {fileID: 54063890643546284}
   - component: {fileID: 114963311885979670}
   - component: {fileID: 114497868231759342}
-  - component: {fileID: 114762042097486276}
   m_Layer: 0
   m_Name: First Person Controller
   m_TagString: Untagged
@@ -478,24 +477,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpStrength: 2
   groundCheck: {fileID: 114503055206606986}
---- !u!114 &114762042097486276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773623360729482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27b67ddb3d23b8340b125aede56d7e8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: 306
-  movement: {fileID: 114963311885979670}
-  movementSpeed: 2
-  headToLower: {fileID: 4490257326247362}
-  crouchYHeadPosition: 1
-  colliderToLower: {fileID: 136877096903737240}
 --- !u!1 &1963958859065967600
 GameObject:
   m_ObjectHideFlags: 0

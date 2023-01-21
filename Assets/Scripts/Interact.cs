@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
-    public GameObject hammer;
+    public CharacterStatus cs;
+    public BagUI bui;
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.G))
@@ -17,13 +18,36 @@ public class Interact : MonoBehaviour
                 {
                     hit.transform.gameObject.SetActive(false);
                     if(hit.transform.gameObject.name == "hammer")
-                        SpwanHammer();
+                    {
+                        cs.everhammer = true;
+                        cs.sethammer(true);
+                        cs.setkey(false);
+                        bui.sethammer(true);
+                        bui.setkey(false);
+                    }
+                    if(hit.transform.gameObject.name == "key")
+                    {
+                        cs.everkey = true;
+                        cs.setkey(true);
+                        cs.sethammer(false);
+                        bui.sethammer(false);
+                        bui.setkey(true);
+                    }
                 }
             } 
         }
-    }
-    void SpwanHammer()
-    {
-
+        if(Input.GetKeyDown(KeyCode.F) && cs.withhammer)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit; 
+            if (Physics.Raycast(ray, out hit, 2) && cs.withhammer)
+            {
+                if(hit.transform.gameObject.tag == "Destoryable")
+                {
+                    BreakableObject bo = hit.transform.gameObject.GetComponent<BreakableObject>();
+                    bo.triggerBreak();
+                }
+            } 
+        }
     }
 }
