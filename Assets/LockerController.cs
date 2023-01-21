@@ -9,6 +9,8 @@ public class LockerController : MonoBehaviour
     private bool lockerOpened;                    //Check if locker is currently opened or not
     public GameObject lockGameObject;            //Assign the lock gameobject here
     public bool lockOpened;
+    GameObject player;
+    public GameObject LockCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +18,7 @@ public class LockerController : MonoBehaviour
         lockerOpened = false;                     //Is the locker currently opened
         lockOpened = false;
         playerInZone = false;      
+        player = GameObject.Find("Player");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,25 +46,18 @@ public class LockerController : MonoBehaviour
                 //Enable the locker script
                 lockGameObject.GetComponent<MoveRuller>().enabled = true;
                 //Disable the player
-                GameObject.Find("Player").GetComponent<FirstPersonMovement>().enabled = false;
-                //Disable the player camera
-                GameObject.Find("Player").GetComponentInChildren<Camera>().enabled = false;
-                //Enable the locker camera
-                if(lockGameObject!=null){
-                    lockGameObject.GetComponentInChildren<Camera>().enabled = true;
-                }
+                player.SetActive(false);
+                LockCamera.SetActive(true);
             }
         }
         
         if(lockOpened && !lockerOpened){
             lockerOpened = true;
             //Enable the player
-            GameObject.Find("Player").GetComponent<FirstPersonMovement>().enabled = true;
-            //Enable the player camera
-            GameObject.Find("Player").GetComponentInChildren<Camera>().enabled = true;
+            player.SetActive(true);
             //Disable the locker camera
             if(lockGameObject!=null){
-                lockGameObject.GetComponentInChildren<Camera>().enabled = false;
+                LockCamera.SetActive(false);
                 //Disable the locker script
                 lockGameObject.GetComponent<MoveRuller>().enabled = false;
             }
