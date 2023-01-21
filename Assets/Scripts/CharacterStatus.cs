@@ -9,6 +9,7 @@ public class CharacterStatus : MonoBehaviour
     public bool withkey;
     public bool everhammer = false;
     public bool everkey = false;
+    public DoorController dc;
     public void sethammer(bool status)
     {
         withhammer = status;
@@ -16,5 +17,6 @@ public class CharacterStatus : MonoBehaviour
     public void setkey(bool status)
     {
         withkey = status;
+        dc.gotKey = status;
     }
 }
