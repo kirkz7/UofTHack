@@ -391,7 +391,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2933079874060365905}
-  - component: {fileID: 3404402356410622240}
   - component: {fileID: 3404402356410622241}
   - component: {fileID: 3404402356410622242}
   - component: {fileID: 3404402356410622301}
@@ -419,20 +418,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &3404402356410622240
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2593990056247519979}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &3404402356410622241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,6 +445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberPassword: 04000000080000000100000002000000
+  _lockerAnimator: {fileID: 0}
+  _doorAnimator: {fileID: 0}
 --- !u!114 &3404402356410622301
 MonoBehaviour:
   m_ObjectHideFlags: 0

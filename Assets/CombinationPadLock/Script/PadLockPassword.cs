@@ -2,6 +2,7 @@
 
 using System.Linq;
 using UnityEngine;
+using System.Collections;
 
 public class PadLockPassword : MonoBehaviour
 {
@@ -32,19 +33,32 @@ public class PadLockPassword : MonoBehaviour
                 _moveRull._rullers[i].GetComponent<PadLockEmissionColor>()._isSelect = false;
                 _moveRull._rullers[i].GetComponent<PadLockEmissionColor>().BlinkingMaterial();
             }
-            // Play the animation of the lock opening
-            _lockerAnimator.SetBool("unlock", true);
-            // Play the animation of the door opening
-            _doorAnimator.SetBool("open", true);
-            _doorAnimator.SetBool("close", false);
 
-            //Let the lock drop down by the gravity
-            GetComponent<Rigidbody>().useGravity = true;
-            GetComponent<Rigidbody>().isKinematic = false;
-
-            //Let the lock disappear in 3 seconds(或许以后可以改成渐变消失)
-            Destroy(gameObject, 3f);
+            StartCoroutine(openLockWaiter());
 
         }
     }
+
+    IEnumerator openLockWaiter()
+    {
+            // Play the animation of the lock opening
+            _lockerAnimator.SetBool("unlock", true);
+
+            yield return new WaitForSeconds(1.5f);
+            
+            GameObject.Find("LockerZone").GetComponent<LockerController>().lockOpened = true;
+
+            //Let the lock drop down by the gravity
+            GetComponent<Rigidbody>().isKinematic = false;
+
+            //Let the lock disappear in 3 seconds(或许以后可以改成渐变消失)
+            Destroy(gameObject, 1f);
+
+            // Play the animation of the door opening
+            _doorAnimator.SetBool("Open", true);
+            _doorAnimator.SetBool("Close", false);
+
+
+    }
+
 }
