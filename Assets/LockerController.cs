@@ -18,7 +18,6 @@ public class LockerController : MonoBehaviour
         lockerOpened = false;                     //Is the locker currently opened
         lockOpened = false;
         playerInZone = false;      
-        player = GameObject.Find("Player");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,6 +25,7 @@ public class LockerController : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             playerInZone = true;
+            player = other.gameObject;
         }
     }
 
@@ -46,7 +46,7 @@ public class LockerController : MonoBehaviour
                 //Enable the locker script
                 lockGameObject.GetComponent<MoveRuller>().enabled = true;
                 //Disable the player
-                player.SetActive(false);
+                player.GetComponentInChildren<Camera>().gameObject.SetActive(false);
                 LockCamera.SetActive(true);
             }
         }
@@ -54,7 +54,7 @@ public class LockerController : MonoBehaviour
         if(lockOpened && !lockerOpened){
             lockerOpened = true;
             //Enable the player
-            player.SetActive(true);
+            player.GetComponentInChildren<Camera>().gameObject.SetActive(true);     
             //Disable the locker camera
             if(lockGameObject!=null){
                 LockCamera.SetActive(false);
