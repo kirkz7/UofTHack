@@ -3,6 +3,7 @@
 using System.Linq;
 using UnityEngine;
 using System.Collections;
+using Photon.Pun;
 
 public class PadLockPassword : MonoBehaviour
 {
@@ -52,8 +53,8 @@ public class PadLockPassword : MonoBehaviour
             GetComponent<Rigidbody>().isKinematic = false;
 
             //Let the lock disappear in 3 seconds(或许以后可以改成渐变消失)
-            Destroy(gameObject, 1f);
-
+            //PhotonNetwork.Destroy(gameObject);
+            Destroy(gameObject,1f);
             // Play the animation of the door opening
             _doorAnimator.SetBool("Open", true);
             _doorAnimator.SetBool("Close", false);

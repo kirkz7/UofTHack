@@ -19,7 +19,7 @@ public class MenuButton : MonoBehaviour
 			if(Input.GetAxis ("Submit") == 1){
 				//NEW GAME
 				if(thisIndex == 0){
-
+					LoadScene("Loading");
 				}
 				//Room 1
 				if(thisIndex == 1){

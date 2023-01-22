@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Photon.Pun;
 
-public class FirstPersonLook : MonoBehaviour
+public class FirstPersonLookNew : MonoBehaviour
 {
     [SerializeField]
     Transform character;
@@ -10,7 +10,6 @@ public class FirstPersonLook : MonoBehaviour
 
     Vector2 velocity;
     Vector2 frameVelocity;
-    PhotonView view;
 
     void Reset()
     {
@@ -18,16 +17,10 @@ public class FirstPersonLook : MonoBehaviour
         character = GetComponentInParent<FirstPersonMovement>().transform;
     }
 
-    void Start()
-    {
-        view = GetComponentInParent<PhotonView>();
-    }
 
     void Update()
     {
         // Get smooth velocity.
-        if(view.IsMine || view == null)
-        {
         Vector2 mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         Vector2 rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * sensitivity);
         frameVelocity = Vector2.Lerp(frameVelocity, rawFrameVelocity, 1 / smoothing);
@@ -37,6 +30,5 @@ public class FirstPersonLook : MonoBehaviour
         // Rotate camera up-down and controller left-right from velocity.
         transform.localRotation = Quaternion.AngleAxis(-velocity.y, Vector3.right);
         character.localRotation = Quaternion.AngleAxis(velocity.x, Vector3.up);
-        }
     }
 }

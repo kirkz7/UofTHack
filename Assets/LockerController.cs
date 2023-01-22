@@ -11,6 +11,9 @@ public class LockerController : MonoBehaviour
     public bool lockOpened;
     GameObject player;
     public GameObject LockCamera;
+    GameObject fpln;
+    GameObject fpmn;
+    GameObject camera;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +49,12 @@ public class LockerController : MonoBehaviour
                 //Enable the locker script
                 lockGameObject.GetComponent<MoveRuller>().enabled = true;
                 //Disable the player
-                player.GetComponentInChildren<Camera>().gameObject.SetActive(false);
+                camera = player.GetComponentInChildren<Camera>().gameObject;
+                fpln = player.GetComponentInChildren<FirstPersonLookNew>().gameObject;
+                fpln.SetActive(false);
+                fpmn = player.GetComponent<FirstPersonMovementNew>().gameObject;
+                fpmn.SetActive(false);
+                camera.SetActive(false);
                 LockCamera.SetActive(true);
             }
         }
@@ -54,7 +62,10 @@ public class LockerController : MonoBehaviour
         if(lockOpened && !lockerOpened){
             lockerOpened = true;
             //Enable the player
-            player.GetComponentInChildren<Camera>().gameObject.SetActive(true);     
+            camera.SetActive(true);
+            fpln.SetActive(true);
+            fpmn.SetActive(true);
+            LockCamera.SetActive(false);     
             //Disable the locker camera
             if(lockGameObject!=null){
                 LockCamera.SetActive(false);
