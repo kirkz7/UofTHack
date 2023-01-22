@@ -58,6 +58,22 @@ public class LockerController : MonoBehaviour
                 LockCamera.SetActive(true);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && playerInZone)
+        {
+            if(!lockerOpened && !lockOpened){
+            camera.SetActive(true);
+            fpln.SetActive(true);
+            fpmn.SetActive(true);
+            LockCamera.SetActive(false);     
+            //Disable the locker camera
+            if(lockGameObject!=null){
+                LockCamera.SetActive(false);
+                //Disable the locker script
+                lockGameObject.GetComponent<MoveRuller>().enabled = false;
+            }
+            }
+        }
         
         if(lockOpened && !lockerOpened){
             lockerOpened = true;
