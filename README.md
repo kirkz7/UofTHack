@@ -1,39 +1,40 @@
-# Escape Room - UofTHacks X Project
+# 🚪 Escape Room - UofTHacks X Project 🎮
 
-Escape Room is a first-person, multiplayer VR game developed during the UofTHacks X hackathon. The game challenges players to explore rooms, discover clues, solve puzzles, and accomplish tasks within a limited timeframe. It was inspired by the theme of Exploration, and our team aimed to explore the realms of game development, Metaverse, and Virtual Reality (VR) within the intense 36-hour hackathon period. For more detail about the project, please check out our [post](https://devpost.com/software/escape-room-7bnspl).
+Welcome to **Escape Room**, a thrilling first-person, multiplayer VR game developed during the adrenaline-fueled UofTHacks X hackathon! Embark on an adventure where exploration meets puzzle-solving, all within the immersive realms of Virtual Reality. ⏳
 
+Dive into challenging rooms, uncover hidden clues, and collaborate with your friends to solve intricate puzzles before time runs out! Inspired by the theme of Exploration, our dedicated team delved into the exciting domains of game development, Metaverse, and Virtual Reality, crafting an experience that pushes the boundaries of interactive entertainment. 
 
-## Inspiration
+For a detailed overview of our project, check out our [Devpost page](https://devpost.com/software/escape-room-7bnspl).
 
-We were inspired by the UofTHacks X theme, Exploration, which led us to create a game that requires players to explore various rooms, solve puzzles, and uncover hidden clues. Additionally, our team wanted to explore the world of game development, especially in the context of VR and Metaverse technologies.
+## 🌌 Inspiration
 
-## What it Does
+We were inspired by the UofTHacks X theme, **Exploration**, propelling us to create a game that invites players to traverse diverse rooms, solving puzzles and unveiling secrets. Our mission extended beyond gameplay, as we explored the vast landscapes of game development, VR, and the Metaverse.
 
-Escape Room is a multiplayer VR game that allows players to work together to uncover clues and solve puzzles within different rooms. The game encourages exploration and collaboration, challenging players to accomplish specific goals within a limited time.
+## 🎯 What it Does
 
-## How We Built It
+**Escape Room** is a heart-pounding multiplayer VR adventure, encouraging players to collaborate, explore, and conquer challenges together. Race against time, decipher puzzles, and achieve specific objectives within the confines of our captivating virtual rooms.
 
-We used Unity as our development platform and leveraged assets from the Unity Asset Store to create the 3D models and animations for our game. GitHub was utilized for project management and collaboration. To enable multiplayer functionality, we integrated the Photon engine, and for VR development, we employed the OpenXR plugin in Unity.
+## 🛠️ How We Built It
 
-## Challenges Faced
+Harnessing the power of Unity and the creativity of our team, we brought **Escape Room** to life. With assets from the Unity Asset Store and the magic of GitHub collaboration, we sculpted 3D wonders. Multiplayer magic was conjured using the Photon engine, while the immersive VR experience was crafted with the OpenXR plugin for Unity.
 
-One major challenge we encountered was setting up VR devices. We used Valve Index, which required DisplayPort output, but our laptop only supported HDMI input. After extensive searching and asking for help, we managed to find a compatible adapter.
+## 🚀 Challenges Faced
 
-Another hurdle was our lack of experience in game development. However, we overcame this obstacle by following tutorials on YouTube, allowing us to quickly grasp the basics of game development and successfully implement our ideas.
+Our journey was not without obstacles. Setting up VR devices proved to be a daunting challenge, but persistence led us to compatible solutions. Overcoming our initial lack of game development experience, we embraced online tutorials, rapidly learning the intricacies of game design.
 
-## Accomplishments
+## 🏆 Accomplishments
 
-We are proud of achieving multiplayer functionality in our game by quickly learning and implementing the Photon engine. Additionally, creating a VR game using the OpenXR toolkit without prior experience in game development was a significant accomplishment for our team.
+We take pride in our achievement of implementing seamless multiplayer functionality via the Photon engine. Venturing into the uncharted territories of VR without prior experience, we successfully navigated the OpenXR toolkit, creating an immersive gaming experience for all.
 
-## What We Learned
+## 🧠 What We Learned
 
-Throughout the hackathon, we learned Unity and C# programming through online resources. We also gained valuable knowledge about the Photon engine for enabling multiplayer gameplay and the OpenXR plugin for VR development. Managing our project on GitHub taught us essential collaboration and version control skills.
+The hackathon became our classroom, teaching us Unity, C# programming, and the art of collaboration through GitHub. We mastered the intricacies of the Photon engine, enabling dynamic multiplayer gameplay, and delved into the immersive universe of VR using the OpenXR plugin.
 
-## What's Next for Escape Room
+## 🔮 What's Next for Escape Room
 
-In the future, we plan to allow users to design their own rooms and create custom puzzles. We aim to expand the game by adding more diverse and challenging puzzles. Furthermore, we are committed to enhancing the overall user experience, focusing on optimizing performance and ensuring seamless gameplay.
+The adventure doesn't end here! In the future, we plan to empower users to design their own rooms and craft custom puzzles, enhancing the game's versatility. Prepare for a journey filled with diverse and challenging puzzles, all designed to captivate your senses. We are committed to refining the user experience, optimizing performance, and ensuring every moment in **Escape Room** is seamless and unforgettable.
 
-## Built With
+## 🔧 Built With
 
 - C#
 - GitHub
